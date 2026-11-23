@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Casa Vivian · Decoração, tableware e arquitetura · Divinópolis e Varginha</title>
+  <meta name="description" content="Casa Vivian: objetos de decoração, louças, taças, vasos e projeto de interiores em Divinópolis e Varginha (MG). Mais do que uma loja, um lugar para encontros.">
+  <meta name="theme-color" content="#120709">
+  <meta property="og:title" content="Casa Vivian · Mais do que uma loja">
+  <meta property="og:description" content="Decoração, tableware e arquitetura em Divinópolis e Varginha.">
+  <meta property="og:image" content="img/loja-salao.webp">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300..600&family=Allura&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/loja-salao.webp">
+  <link rel="stylesheet" href="./src/site.css">
+</head>
+<body class="pagina-inicio">
+  <a class="pular" href="#salas">Pular para o conteúdo</a>
+
+  <header class="nav">
+    <a class="marca" href="./" aria-label="Casa Vivian, início">
+      <span class="marca__casa">CASA</span><span class="marca__vivian">Vivian</span>
+    </a>
+    <nav class="indice" aria-label="Seções">
+      <a href="#salas">Salas</a>
+      <a href="#mesa">Mesa posta</a>
+      <a href="#arquitetura">Arquitetura</a>
+      <a href="#encontros">Encontros</a>
+      <a href="#visite">Visite</a>
+    </nav>
+    <div class="acoes">
+      <a class="pilula pilula--linha" href="produtos.html" data-magnetico>Loja</a>
+      <button class="pilula pilula--cheia sacola-btn" data-abrir-sacola aria-label="Abrir sacola">
+        Sacola <span class="contador" data-contador hidden>0</span>
+      </button>
+      <button class="nav__menu" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav id="menu" class="menu" aria-label="Menu">
+    <a href="#salas">Salas</a>
+    <a href="#mesa">Mesa posta</a>
+    <a href="#arquitetura">Arquitetura</a>
+    <a href="#encontros">Encontros</a>
+    <a href="#visite">Visite</a>
+    <a href="produtos.html">Loja</a>
+    <p class="menu__pe">Divinópolis · Varginha</p>
+  </nav>
+
+  <main>
+    <!-- HERO: a galeria. Rolando, entramos no quadro. -->
+    <section class="hero" id="topo" aria-labelledby="hero-titulo">
+      <div class="hero__trilha">
+        <div class="hero__tela">
+          <div class="galeria" aria-hidden="true"></div>
+          <figure class="quadro">
+            <div class="quadro__moldura">
+              <img src="img/loja-salao.webp" alt="Salão da Casa Vivian: painéis florais terracota, estantes de madeira com vasos e mesa posta azul e branco" width="1186" height="1186" fetchpriority="high">
+            </div>
+            <figcaption class="placa">
+              <strong>Casa Vivian</strong>
+              <span>O salão, Varginha · 2026</span>
+              <span>Louças, vidro, cerâmica e madeira</span>
+            </figcaption>
+          </figure>
+          <div class="hero__veu" aria-hidden="true"></div>
+          <div class="hero__conteudo">
+            <div class="hero__texto">
+              <p>Objetos de decoração, tableware e projeto de interiores em <strong>Divinópolis e Varginha</strong>.</p>
+              <div class="hero__botoes">
+                <a class="pilula pilula--clara" href="produtos.html" data-magnetico>Entrar na loja</a>
+                <a class="pilula pilula--linha-clara" href="https://wa.me/5537991292900?text=Ol%C3%A1%2C%20Casa%20Vivian!%20Vim%20pelo%20site." target="_blank" rel="noopener">Falar no WhatsApp</a>
+              </div>
+            </div>
+            <h1 class="hero__titulo" id="hero-titulo">Mais do que uma loja.</h1>
+          </div>
+          <p class="hero__frase" aria-hidden="true">Um lugar para encontros, <em>com arte e poesia.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- faixa -->
+    <div class="faixa" aria-hidden="true">
+      <div class="faixa__trilho">
+        <span>Louças</span><span>Taças</span><span>Vasos e jarras</span><span>Mantas de tricô</span><span>Quadros</span><span>Abajures</span><span>Aromas</span><span>Natal</span>
+        <span>Louças</span><span>Taças</span><span>Vasos e jarras</span><span>Mantas de tricô</span><span>Quadros</span><span>Abajures</span><span>Aromas</span><span>Natal</span>
+      </div>
+    </div>
+
+    <!-- SALAS -->
+    <section class="salas" id="salas" aria-labelledby="salas-titulo">
+      <div class="salas__cabeca">
+        <h2 class="titulo-secao" id="salas-titulo" data-titulo><span class="l"><span>Oito salas,</span></span> <span class="l"><span>uma casa só.</span></span></h2>
+        <p class="salas__intro" data-entra>A loja é organizada como uma casa: cada sala com as peças que moram nela. Escolha uma e veja o que está na vitrine agora.</p>
+      </div>
+      <div class="salas__corpo">
+        <div class="salas__lista" role="tablist" aria-label="Salas da loja"></div>
+        <div class="salas__vitrine">
+          <div class="salas__fotos"></div>
+          <div class="salas__painel" role="tabpanel" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MESA POSTA: a peça viva -->
+    <section class="mesa" id="mesa" aria-labelledby="mesa-titulo">
+      <div class="mesa__cabeca">
+        <h2 class="titulo-secao" id="mesa-titulo" data-titulo><span class="l"><span>Monte a sua</span></span> <span class="l"><span>mesa posta.</span></span></h2>
+        <p data-entra>Compor uma mesa ganha outro sentido quando alguém que entende ajuda a escolher. Comece por aqui: três escolhas, e a gente termina com você na loja.</p>
+      </div>
+      <div class="mesa__corpo">
+        <form class="mesa__escolhas" aria-label="Escolhas da mesa">
+          <fieldset>
+            <legend>A louça</legend>
+            <div class="opcoes" data-slot="louca"></div>
+          </fieldset>
+          <fieldset>
+            <legend>O centro da mesa</legend>
+            <div class="opcoes" data-slot="centro"></div>
+          </fieldset>
+          <fieldset>
+            <legend>O toque final</legend>
+            <div class="opcoes" data-slot="toque"></div>
+          </fieldset>
+        </form>
+        <div class="mesa__resultado">
+          <div class="mesa__composicao" aria-live="polite">
+            <figure data-pos="louca"><img alt=""><figcaption></figcaption></figure>
+            <figure data-pos="centro"><img alt=""><figcaption></figcaption></figure>
+            <figure data-pos="toque"><img alt=""><figcaption></figcaption></figure>
+          </div>
+          <div class="mesa__conta">
+            <p class="mesa__total"><span>Sua mesa</span> <strong data-total>R$ 0,00</strong></p>
+            <div class="mesa__botoes">
+              <button class="pilula pilula--cheia" type="button" data-levar data-magnetico>Levar tudo para a sacola</button>
+              <a class="pilula pilula--linha" data-consultoria target="_blank" rel="noopener" href="#">Montar com a consultora</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARQUITETURA -->
+    <section class="arq" id="arquitetura" aria-labelledby="arq-titulo">
+      <div class="arq__foto arq__foto--grande">
+        <img src="img/casa-madeira.webp" alt="Casa de madeira com varanda e jardim sob uma árvore alta" width="663" height="1190" loading="lazy" data-paralaxe>
+      </div>
+      <div class="arq__texto">
+        <h2 class="titulo-secao" id="arq-titulo" data-titulo><span class="l"><span>Arquitetura,</span></span> <span class="l"><span>design e decoração.</span></span></h2>
+        <p class="arq__lead" data-entra>A Casa Vivian nasceu junto de um escritório de arquitetura. Por isso a loja pensa como projeto: cada peça é escolhida para caber num ambiente real, com a identidade de quem vive nele.</p>
+        <ol class="servicos" data-entra="filhos">
+          <li>
+            <h3>Projeto de interiores</h3>
+            <p>Arquitetura e decoração integradas, do primeiro traço à última almofada, com a equipe da Vivian Arquitetura e Design.</p>
+          </li>
+          <li>
+            <h3>Consultoria na loja</h3>
+            <p>Traga a planta, as fotos ou só a vontade. A gente percorre as salas com você e separa o que conversa com a sua casa.</p>
+          </li>
+          <li>
+            <h3>Mesa posta personalizada</h3>
+            <p>Louça, taças, guardanapos e centro de mesa escolhidos para a ocasião, do almoço de domingo à ceia de Natal.</p>
+          </li>
+        </ol>
+        <a class="pilula pilula--cheia" href="https://wa.me/5537991292900?text=Ol%C3%A1!%20Quero%20saber%20sobre%20projeto%20e%20consultoria%20de%20decora%C3%A7%C3%A3o." target="_blank" rel="noopener" data-magnetico>Agendar uma conversa</a>
+      </div>
+      <div class="arq__foto arq__foto--pequena">
+        <img src="img/loja-orquideas.webp" alt="Garrafas listradas azul e branco com orquídeas, ao lado de um abajur de porcelana" width="998" height="1200" loading="lazy">
+      </div>
+    </section>
+
+    <!-- ENCONTROS: trilho horizontal -->
+    <section class="encontros" id="encontros" aria-labelledby="enc-titulo">
+      <div class="encontros__trilha">
+        <div class="encontros__tela">
+          <div class="encontros__cabeca">
+            <h2 class="titulo-secao" id="enc-titulo">Um lugar para encontros.</h2>
+            <p>A loja também recebe gente: mesas temáticas, cafés de fim de tarde e conversas sobre casa, arte e mulheres que inspiram.</p>
+          </div>
+          <div class="encontros__rolo">
+            <figure class="obra">
+              <div class="obra__img"><img src="img/natal-estante.webp" alt="Mesa com toalha xadrez e caixas kraft com fitas bordô sobre tapete vermelho" width="648" height="478" loading="lazy"></div>
+              <figcaption><strong>Casa conVIDA, edição Natal</strong><span>Uma tarde para celebrar o encerramento do ano.</span></figcaption>
+            </figure>
+            <figure class="obra obra--alta">
+              <div class="obra__img"><img src="img/pascoa-coelho.webp" alt="Coelho de porcelana com carrinho azul de flores amarelas sobre toalha de crochê" width="663" height="590" loading="lazy"></div>
+              <figcaption><strong>Mesa de Páscoa</strong><span>Coelhos de louça azul e branco e ovos de chocolate na toalha de crochê.</span></figcaption>
+            </figure>
+            <figure class="obra">
+              <div class="obra__img"><img src="img/mesa-pascoa.webp" alt="Mesa posta de Páscoa com coelhos de pelúcia e porcelana, lustre de cristal e flores" width="640" height="560" loading="lazy"></div>
+              <figcaption><strong>Zoom in</strong><span>Os detalhes que completam uma mesa criativa.</span></figcaption>
+            </figure>
+            <figure class="obra obra--alta">
+              <div class="obra__img"><img src="img/loja-interior-a.webp" alt="Interior da loja com quadro abstrato vermelho, abajures, taças verdes e estantes" width="640" height="520" loading="lazy"></div>
+              <figcaption><strong>A peça certa</strong><span>Transforma a sua casa, e às vezes o presente de alguém.</span></figcaption>
+            </figure>
+            <div class="obra obra--texto">
+              <p>Casa conVIDA, Mulheres que Inspiram Mulheres e as mesas de cada estação.</p>
+              <a class="pilula pilula--clara" href="https://www.instagram.com/casavivian/" target="_blank" rel="noopener">Acompanhar no Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESENTE -->
+    <section class="presente" aria-labelledby="pres-titulo">
+      <div class="presente__foto">
+        <img src="img/caixas-presente.webp" alt="Caixas kraft com fita de cetim bordô estampada com o monograma Casa Vivian" width="628" height="528" loading="lazy" data-paralaxe>
+      </div>
+      <div class="presente__texto">
+        <h2 class="titulo-secao" id="pres-titulo" data-titulo><span class="l"><span>Todo presente sai</span></span> <span class="l"><span>com a fita da casa.</span></span></h2>
+        <p data-entra>Caixa kraft, cetim bordô com o monograma e um cartão escrito à mão. Para o Dia das Mães, o amigo secreto, a casa nova ou só porque sim.</p>
+        <div class="presente__botoes" data-entra>
+          <a class="pilula pilula--cheia" href="produtos.html?cat=presentes" data-magnetico>Escolher um presente</a>
+          <a class="pilula pilula--linha" href="produtos.html?cat=aromas">Ver aromas</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISITE -->
+    <section class="visite" id="visite" aria-labelledby="vis-titulo">
+      <div class="visite__info">
+        <h2 class="titulo-secao" id="vis-titulo" data-titulo><span class="l"><span>Duas portas</span></span> <span class="l"><span>abertas em Minas.</span></span></h2>
+        <div class="lojas" role="tablist" aria-label="Escolha a loja">
+          <button role="tab" aria-selected="true" data-loja="varginha">Varginha</button>
+          <button role="tab" aria-selected="false" data-loja="divinopolis">Divinópolis</button>
+        </div>
+        <div class="loja-dados" data-entra>
+          <dl>
+            <div><dt>Cidade</dt><dd data-campo="cidade">Varginha, MG</dd></div>
+            <div><dt>Telefone</dt><dd><a data-campo="tel" href="tel:+5535910026352">(35) 91002-6352</a></dd></div>
+            <div><dt>Atendimento</dt><dd>Horários pelo WhatsApp · visita com hora marcada para projetos</dd></div>
+          </dl>
+          <div class="loja-dados__botoes">
+            <a class="pilula pilula--cheia" data-campo="whats" href="https://wa.me/5535910026352" target="_blank" rel="noopener" data-magnetico>Chamar no WhatsApp</a>
+            <a class="pilula pilula--linha" data-campo="rota" href="https://www.google.com/maps/search/?api=1&query=Casa+Vivian+Varginha+MG" target="_blank" rel="noopener">Abrir rota</a>
+          </div>
+        </div>
+      </div>
+      <div class="visite__mapa">
+        <iframe title="Mapa da Casa Vivian" data-campo="mapa" src="https://www.google.com/maps?q=Casa+Vivian+Varginha+MG&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__topo">
+      <p class="rodape__frase">Sua casa e você são únicas. Nós também.</p>
+      <nav class="rodape__links" aria-label="Rodapé">
+        <a href="produtos.html">Loja</a>
+        <a href="#mesa">Mesa posta</a>
+        <a href="#arquitetura">Arquitetura</a>
+        <a href="https://www.instagram.com/casavivian/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/5537991292900" target="_blank" rel="noopener">WhatsApp Divinópolis</a>
+        <a href="https://wa.me/5535910026352" target="_blank" rel="noopener">WhatsApp Varginha</a>
+      </nav>
+    </div>
+    <p class="rodape__marca" aria-hidden="true"><span class="marca__casa">CASA</span><span class="marca__vivian">Vivian</span></p>
+    <p class="rodape__direitos">© 2026 Casa Vivian · Fotos do acervo @casavivian · Site demonstrativo por <a href="https://www.instagram.com/zoryonweb/" target="_blank" rel="noopener">ZoryonWeb</a></p>
+  </footer>
+
+  <script type="module" src="./src/inicio.js"></script>
+</body>
+</html>

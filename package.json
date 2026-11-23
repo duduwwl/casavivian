@@ -1,0 +1,8 @@
+{
+  "name": "casa-vivian",
+  "private": true,
+  "type": "module",
+  "scripts": { "dev": "vite --port 5360", "build": "vite build", "preview": "vite preview --port 5361" },
+  "dependencies": { "gsap": "3.15.1", "lenis": "1.3.27" },
+  "devDependencies": { "vite": "^7.0.0" }
+}

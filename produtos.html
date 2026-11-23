@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>A loja · Casa Vivian</title>
+  <meta name="description" content="Louças, taças, vasos, abajures, aromas e presentes da Casa Vivian. Escolha, monte sua sacola e retire em Varginha ou Divinópolis.">
+  <meta name="theme-color" content="#f3ece6">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300..600&family=Allura&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/site.css">
+</head>
+<body class="pagina-loja">
+  <a class="pular" href="#vitrine">Pular para os produtos</a>
+
+  <header class="nav nav--clara">
+    <a class="marca" href="./" aria-label="Casa Vivian, início">
+      <span class="marca__casa">CASA</span><span class="marca__vivian">Vivian</span>
+    </a>
+    <nav class="indice" aria-label="Seções">
+      <a href="./#salas">Salas</a>
+      <a href="./#mesa">Mesa posta</a>
+      <a href="./#arquitetura">Arquitetura</a>
+      <a href="./#visite">Visite</a>
+    </nav>
+    <div class="acoes">
+      <a class="pilula pilula--linha" href="./">Início</a>
+      <button class="pilula pilula--cheia sacola-btn" data-abrir-sacola aria-label="Abrir sacola">
+        Sacola <span class="contador" data-contador hidden>0</span>
+      </button>
+      <button class="nav__menu" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav id="menu" class="menu" aria-label="Menu">
+    <a href="./">Início</a>
+    <a href="./#salas">Salas</a>
+    <a href="./#mesa">Mesa posta</a>
+    <a href="./#arquitetura">Arquitetura</a>
+    <a href="./#visite">Visite</a>
+    <p class="menu__pe">Divinópolis · Varginha</p>
+  </nav>
+
+  <main class="loja">
+    <section class="loja__topo" aria-labelledby="loja-titulo">
+      <div class="loja__titulo-bloco">
+        <h1 id="loja-titulo" class="loja__titulo">A loja</h1>
+        <p class="loja__sub">Peças escolhidas uma a uma, para a mesa, a parede e o aparador. Retire em Varginha ou Divinópolis, ou receba em casa.</p>
+      </div>
+      <figure class="loja__foto">
+        <img src="img/loja-lirios-vitrine.webp" alt="Vitrine da Casa Vivian com lírios em vaso fumê e cachepô âmbar" width="905" height="1200">
+      </figure>
+    </section>
+
+    <section class="filtros" aria-label="Filtros">
+      <div class="filtros__linha">
+        <div class="chips" role="radiogroup" aria-label="Categoria"></div>
+      </div>
+      <div class="filtros__linha filtros__linha--ferramentas">
+        <label class="busca">
+          <span class="sr">Buscar</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.6"/></svg>
+          <input type="search" placeholder="Buscar peça, material…" data-busca>
+        </label>
+        <label class="campo-select">
+          <span>Ordenar</span>
+          <select data-ordem>
+            <option value="destaque">Destaques</option>
+            <option value="menor">Menor preço</option>
+            <option value="maior">Maior preço</option>
+            <option value="nome">Nome (A–Z)</option>
+          </select>
+        </label>
+        <label class="faixa-preco">
+          <span>Até <strong data-preco-rotulo>R$ 900</strong></span>
+          <input type="range" min="150" max="900" step="10" value="900" data-preco>
+        </label>
+        <label class="alternar">
+          <input type="checkbox" data-novos>
+          <span>Só novidades</span>
+        </label>
+      </div>
+      <p class="filtros__contagem" aria-live="polite" data-contagem></p>
+    </section>
+
+    <section id="vitrine" class="vitrine" aria-label="Produtos">
+      <ul class="grade" data-grade></ul>
+      <div class="vazio" data-vazio hidden>
+        <p>Nenhuma peça com esses filtros.</p>
+        <button class="pilula pilula--linha" data-limpar>Limpar filtros</button>
+      </div>
+    </section>
+
+    <section class="loja__ajuda" aria-labelledby="ajuda-titulo">
+      <h2 id="ajuda-titulo" class="titulo-secao">Não achou a peça?</h2>
+      <p>A loja física tem muito mais do que cabe aqui: quadros, mantas de tricô, louças de outras coleções e as novidades da semana. Mande uma mensagem e a gente procura com você.</p>
+      <a class="pilula pilula--cheia" href="https://wa.me/5537991292900?text=Ol%C3%A1!%20Estou%20procurando%20uma%20pe%C3%A7a%20na%20Casa%20Vivian." target="_blank" rel="noopener">Perguntar no WhatsApp</a>
+    </section>
+  </main>
+
+  <!-- Visualização rápida -->
+  <dialog class="vista" data-vista aria-labelledby="vista-nome">
+    <button class="icone-btn vista__fechar" data-fechar-vista aria-label="Fechar">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+    </button>
+    <div class="vista__corpo"></div>
+  </dialog>
+
+  <!-- Checkout demonstrativo -->
+  <dialog class="checkout" data-checkout-dialog aria-labelledby="checkout-titulo">
+    <div class="checkout__casca">
+      <header class="checkout__topo">
+        <h2 id="checkout-titulo">Finalizar compra</h2>
+        <ol class="passos" aria-label="Etapas">
+          <li data-passo-ind="1" class="atual">Contato</li>
+          <li data-passo-ind="2">Entrega</li>
+          <li data-passo-ind="3">Pagamento</li>
+        </ol>
+        <button class="icone-btn" data-fechar-checkout aria-label="Fechar">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+        </button>
+      </header>
+      <div class="checkout__grade">
+        <form class="checkout__form" novalidate>
+          <fieldset data-passo="1">
+            <legend>Seus dados</legend>
+            <label class="campo"><span>Nome completo</span><input name="nome" autocomplete="name" required></label>
+            <label class="campo"><span>E-mail</span><input name="email" type="email" autocomplete="email" required></label>
+            <label class="campo"><span>WhatsApp</span><input name="tel" inputmode="tel" autocomplete="tel" placeholder="(35) 90000-0000" required data-mascara="tel"></label>
+            <div class="checkout__nav"><button type="button" class="pilula pilula--cheia" data-ir="2">Continuar para entrega</button></div>
+          </fieldset>
+
+          <fieldset data-passo="2" hidden>
+            <legend>Como você quer receber</legend>
+            <div class="radios">
+              <label class="radio"><input type="radio" name="entrega" value="varginha" checked><span><strong>Retirar em Varginha</strong><small>Grátis · pronto em 1 dia útil</small></span></label>
+              <label class="radio"><input type="radio" name="entrega" value="divinopolis"><span><strong>Retirar em Divinópolis</strong><small>Grátis · pronto em 1 dia útil</small></span></label>
+              <label class="radio"><input type="radio" name="entrega" value="casa"><span><strong>Receber em casa</strong><small>R$ 35 na região · grátis acima de R$ 800</small></span></label>
+            </div>
+            <div class="endereco" hidden>
+              <label class="campo"><span>CEP</span><input name="cep" inputmode="numeric" placeholder="00000-000" data-mascara="cep"></label>
+              <label class="campo campo--largo"><span>Endereço</span><input name="rua" autocomplete="street-address"></label>
+              <label class="campo"><span>Número</span><input name="num"></label>
+              <label class="campo"><span>Cidade</span><input name="cidade" autocomplete="address-level2"></label>
+            </div>
+            <label class="alternar alternar--presente"><input type="checkbox" name="presente"><span>É presente: embalar na caixa kraft com a fita da casa</span></label>
+            <div class="checkout__nav">
+              <button type="button" class="pilula pilula--linha" data-ir="1">Voltar</button>
+              <button type="button" class="pilula pilula--cheia" data-ir="3">Continuar para pagamento</button>
+            </div>
+          </fieldset>
+
+          <fieldset data-passo="3" hidden>
+            <legend>Pagamento</legend>
+            <div class="radios radios--lado">
+              <label class="radio"><input type="radio" name="pag" value="pix" checked><span><strong>Pix</strong><small>5% de desconto</small></span></label>
+              <label class="radio"><input type="radio" name="pag" value="cartao"><span><strong>Cartão de crédito</strong><small>Até 6× sem juros</small></span></label>
+            </div>
+            <div class="pag-pix">
+              <div class="pix">
+                <svg class="pix__qr" viewBox="0 0 29 29" aria-label="QR Code Pix de demonstração" role="img"></svg>
+                <div>
+                  <p>Escaneie o QR Code ou copie o código. O pedido é confirmado assim que o pagamento cair.</p>
+                  <button type="button" class="pilula pilula--linha" data-copiar-pix>Copiar código Pix</button>
+                </div>
+              </div>
+            </div>
+            <div class="pag-cartao" hidden>
+              <label class="campo campo--largo"><span>Número do cartão</span><input name="cc" inputmode="numeric" placeholder="0000 0000 0000 0000" autocomplete="off" data-mascara="cartao"></label>
+              <label class="campo campo--largo"><span>Nome impresso</span><input name="ccnome" autocomplete="off"></label>
+              <label class="campo"><span>Validade</span><input name="ccval" inputmode="numeric" placeholder="MM/AA" autocomplete="off" data-mascara="validade"></label>
+              <label class="campo"><span>CVV</span><input name="cvv" inputmode="numeric" maxlength="4" autocomplete="off"></label>
+              <label class="campo campo--largo"><span>Parcelas</span><select name="parcelas" data-parcelas></select></label>
+            </div>
+            <p class="demo-aviso">Checkout demonstrativo: nenhum dado é enviado e nenhum pagamento é processado.</p>
+            <div class="checkout__nav">
+              <button type="button" class="pilula pilula--linha" data-ir="2">Voltar</button>
+              <button type="submit" class="pilula pilula--cheia" data-confirmar>Confirmar pedido</button>
+            </div>
+          </fieldset>
+
+          <div class="confirmado" data-confirmado hidden>
+            <p class="confirmado__selo">Pedido recebido</p>
+            <h3 data-numero>Pedido CV-0000</h3>
+            <p data-confirmado-texto></p>
+            <div class="checkout__nav">
+              <a class="pilula pilula--cheia" data-confirmado-whats target="_blank" rel="noopener" href="#">Enviar pedido no WhatsApp</a>
+              <button type="button" class="pilula pilula--linha" data-fechar-checkout>Continuar comprando</button>
+            </div>
+          </div>
+        </form>
+
+        <aside class="resumo" aria-label="Resumo do pedido">
+          <h3>Resumo</h3>
+          <ul class="resumo__itens" data-resumo-itens></ul>
+          <dl class="resumo__contas">
+            <div><dt>Subtotal</dt><dd data-r-sub></dd></div>
+            <div><dt>Entrega</dt><dd data-r-frete></dd></div>
+            <div data-r-desc-linha hidden><dt>Desconto Pix</dt><dd data-r-desc></dd></div>
+            <div class="resumo__total"><dt>Total</dt><dd data-r-total></dd></div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="rodape rodape--curto">
+    <p class="rodape__marca" aria-hidden="true"><span class="marca__casa">CASA</span><span class="marca__vivian">Vivian</span></p>
+    <p class="rodape__direitos">© 2026 Casa Vivian · Divinópolis e Varginha · Fotos do acervo @casavivian · Preços de demonstração · Site por <a href="https://www.instagram.com/zoryonweb/" target="_blank" rel="noopener">ZoryonWeb</a></p>
+  </footer>
+
+  <script type="module" src="./src/loja.js"></script>
+</body>
+</html>
