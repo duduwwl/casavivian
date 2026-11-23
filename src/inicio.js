@@ -13,28 +13,41 @@ iniciarNav()
 function hero() {
   const quadro = $('.quadro')
   const moldura = $('.quadro__moldura')
+  const guia = $('.quadro__guia')
+  const tela = $('.hero__tela')
+
+  // O quadro existe no tamanho FINAL (tela cheia) e é reduzido até virar a foto
+  // emoldurada. Assim o navegador rasteriza a imagem no tamanho grande e a
+  // ampliação no fim da rolagem sai nítida, em vez de esticar um bitmap pequeno.
+  const repouso = () => {
+    const g = guia.getBoundingClientRect()
+    const t = tela.getBoundingClientRect()
+    const lado = quadro.offsetWidth || 1
+    return {
+      s: g.width / lado,
+      x: g.left + g.width / 2 - (t.left + t.width / 2),
+      y: g.top + g.height / 2 - (t.top + t.height / 2),
+    }
+  }
+  const borda = () => 14 / repouso().s + 'px'
+  const aplicarRepouso = () => {
+    const r = repouso()
+    gsap.set(quadro, { scale: r.s, x: r.x, y: r.y })
+    moldura.style.setProperty('--borda', borda())
+  }
+  aplicarRepouso()
+  document.documentElement.classList.add('hero-pronto')
+
   if (reduz) {
     document.documentElement.classList.add('sem-movimento')
+    addEventListener('resize', aplicarRepouso)
     return
   }
   // entrada
-  gsap.from('.quadro', { opacity: 0, y: 30, duration: 1.6, ease: 'expo.out', delay: 0.1 })
+  gsap.from('.quadro', { opacity: 0, duration: 1.6, ease: 'expo.out', delay: 0.1 })
   gsap.from('.hero__titulo', { yPercent: 40, opacity: 0, duration: 1.4, ease: 'expo.out', delay: 0.25 })
   gsap.from('.hero__texto > *', { y: 20, opacity: 0, duration: 1.1, ease: 'expo.out', stagger: 0.08, delay: 0.45 })
   gsap.from('.placa', { opacity: 0, x: -10, duration: 1, delay: 0.9 })
-
-  const escala = () => {
-    const r = moldura.getBoundingClientRect()
-    const w = r.width / (gsap.getProperty(quadro, 'scale') || 1)
-    const h = r.height / (gsap.getProperty(quadro, 'scale') || 1)
-    return Math.max(innerWidth / w, innerHeight / h) * 1.06
-  }
-  const desloc = () => {
-    // leva o centro do quadro ao centro da tela
-    const r = quadro.getBoundingClientRect()
-    const s = gsap.getProperty(quadro, 'y') || 0
-    return innerHeight / 2 - (r.top - s + moldura.offsetHeight / 2)
-  }
 
   const tl = gsap.timeline({
     defaults: { ease: 'none' },
@@ -48,8 +61,13 @@ function hero() {
   })
   tl.to('.hero__conteudo', { opacity: 0, y: -40, duration: 0.25 }, 0)
     .to('.placa', { opacity: 0, duration: 0.12 }, 0)
-    .to(quadro, { scale: escala, y: desloc, duration: 0.6, ease: 'power2.inOut' }, 0.02)
-    .to('.quadro__moldura', { '--borda': '0px', duration: 0.4 }, 0.15)
+    .fromTo(
+      quadro,
+      { scale: () => repouso().s, x: () => repouso().x, y: () => repouso().y },
+      { scale: 1, x: 0, y: 0, duration: 0.6, ease: 'power2.inOut' },
+      0.02
+    )
+    .fromTo(moldura, { '--borda': borda }, { '--borda': '0px', duration: 0.4 }, 0.15)
     .to('.galeria', { opacity: 0.4, duration: 0.5 }, 0.1)
     .to('.hero__veu', { opacity: 1, duration: 0.2 }, 0.62)
     .fromTo('.hero__frase', { opacity: 0, y: 30, filter: 'blur(8px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.18 }, 0.66)
