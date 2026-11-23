@@ -97,6 +97,10 @@ fieldset { border: 0; min-width: 0; }
   .arq .pilula--linha:hover, .encontros .pilula--linha:hover { background: var(--branco); color: var(--tinta); }
 }
 .ico { flex: none; opacity: .85; }
+.sacola-btn .ico--sacola { display: none; }
+/* Produtos: link do índice no desktop, pílula no celular (sempre o 1º item) */
+.acoes__loja { display: none; }
+.indice__loja { font-weight: 500; opacity: 1; }
 .indice a { display: inline-flex; align-items: center; gap: 7px; }
 .indice__atual { font-weight: 500; opacity: 1 !important; }
 .indice__atual::after { transform: scaleX(1) !important; }
@@ -537,6 +541,8 @@ dialog::backdrop { background: rgba(18,7,9,.6); }
   :root { --nav-h: 64px; }
   .nav__menu { display: block; }
   .acoes .pilula--linha { display: none; }
+  .acoes .acoes__loja { display: inline-flex; order: -1; }        /* Produtos antes da sacola */
+  .acoes__loja--atual { background: var(--tinta); color: var(--papel); border-color: var(--tinta); }
   .salas__cabeca, .mesa__cabeca, .encontros__cabeca, .salas__corpo, .mesa__corpo, .presente, .visite, .loja__topo, .loja__ajuda, .arq { grid-template-columns: 1fr; }
   .salas__vitrine, .mesa__resultado { position: static; }
   .salas__lista { display: flex; overflow-x: auto; gap: 6px; margin: 0 calc(var(--m) * -1); padding: 0 var(--m) 4px; scrollbar-width: none; }
@@ -593,7 +599,12 @@ dialog::backdrop { background: rgba(18,7,9,.6); }
   .checkout__nav .pilula { flex: 1; }
   .loja-dados dl > div { grid-template-columns: 1fr; gap: 2px; }
   .rodape__links { grid-template-columns: 1fr; }
-  .acoes .sacola-btn { padding: 0 14px; }
+  .marca__vivian { font-size: 32px; }
+  .acoes { gap: 8px; }
+  .acoes .pilula { padding: 0 13px; }
+  .sacola-btn__texto { display: none; }
+  .sacola-btn .ico--sacola { display: block; opacity: 1; }
+  .acoes .sacola-btn { padding: 0 12px; gap: 6px; }
 }
 
 /* ---------- Movimento reduzido ---------- */
