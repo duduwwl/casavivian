@@ -204,8 +204,8 @@ function encontros() {
 
 /* ============ VISITE ============ */
 const LOJAS = {
-  varginha: { cidade: 'Varginha, MG', tel: '(35) 91002-6352', telHref: 'tel:+5535910026352', whats: '5535910026352', q: 'Casa Vivian Varginha MG' },
-  divinopolis: { cidade: 'Divinópolis, MG · CEP 35500-443', tel: '(37) 99129-2900', telHref: 'tel:+5537991292900', whats: '5537991292900', q: 'Casa Vivian Divinópolis MG 35500-443' },
+  varginha: { cidade: 'Av. Santa Luzia, 325, loja 3 · Santa Luzia, Varginha (MG) · 37026-690', tel: '(35) 91002-6352', telHref: 'tel:+5535910026352', whats: '5535910026352', q: 'Casa Vivian Arquitetura & Design, Av. Santa Luzia, 325, Varginha MG' },
+  divinopolis: { cidade: 'R. Venceslau Braz, 22 · Porto Velho, Divinópolis (MG) · 35500-443', tel: '(37) 99129-2900', telHref: 'tel:+5537991292900', whats: '5537991292900', q: 'Casa Vivian Arquitetura e Design, R. Venceslau Braz, 22, Divinópolis MG' },
 }
 function visite() {
   $$('[data-loja]').forEach((b) =>
